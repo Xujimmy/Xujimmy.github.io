@@ -229,6 +229,162 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-hexo-github搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/12/28/hexo-github搭建个人博客/" class="article-date">
+      <time datetime="2017-12-28T06:37:35.000Z" itemprop="datePublished">2017-12-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/28/hexo-github搭建个人博客/">hexo+github搭建个人博客</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>hexo 是目前最主流的静态博客框架，该框架基于node，因此编译效率非常高，同时借助于github可以实现零成本搭建与维护。</p>
+<hr>
+<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h2 id="安装node环境"><a href="#安装node环境" class="headerlink" title="安装node环境"></a>安装node环境</h2><p>在node官网<a href="http://www.nodejs.org" target="_blank" rel="noopener">下载</a>对应操作系统的node安装包，安装过程比较简单，就是next模式。安装完成后通过以下步骤检测是否安装成功。</p>
+<ul>
+<li>win+r打开命令行窗口</li>
+<li>输入cmd回车</li>
+<li>在cmd窗口输入node -v</li>
+</ul>
+<p>如果提示”node不是外部或内部命令”，则表示安装失败。</p>
+<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><p>git:版本控制器。<br>进入git官网<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">下载</a>对应操作系统的git安装包，next模式安装。</p>
+<h2 id="安装编译器"><a href="#安装编译器" class="headerlink" title="安装编译器"></a>安装编译器</h2><p>vscode是一款强大的开发工具(IDE)</p>
+<hr>
+<h1 id="安装hexo脚手架"><a href="#安装hexo脚手架" class="headerlink" title="安装hexo脚手架"></a>安装hexo脚手架</h1><ol>
+<li>win+r输入cmd回车</li>
+<li><p>输入npm install hexo-cli -g 回车</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<ul>
+<li>npm: 依赖包管理器。</li>
+<li>install： 安装、导入，可以简写为 i</li>
+<li>-g： 全局安装</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="创建博客项目"><a href="#创建博客项目" class="headerlink" title="创建博客项目"></a>创建博客项目</h1><ol>
+<li><p>在指定位置使用如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入博客目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd blog</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加依赖包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h1 id="本地预览博客"><a href="#本地预览博客" class="headerlink" title="本地预览博客"></a>本地预览博客</h1><h2 id="启动hexo服务"><a href="#启动hexo服务" class="headerlink" title="启动hexo服务"></a>启动hexo服务</h2><p>在blog路径下使用如下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
+<p>然后在浏览器地址栏输入 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 回车访问跟人博客</p>
+<h2 id="编译博客"><a href="#编译博客" class="headerlink" title="编译博客"></a>编译博客</h2><p>每一次修改博客后，先ctrl+s保存，然后使用如下命令编译：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></p>
+<h2 id="清理缓存"><a href="#清理缓存" class="headerlink" title="清理缓存"></a>清理缓存</h2><p>当修改了内容，编译后浏览器没有发生变化时，需要清理blog缓存。方式如下：</p>
+<ol>
+<li>在blog目录执行hexo clean后重新编译</li>
+<li>在浏览器博客页面使用ctrl+shift+i（f12) 调出控制台，切换到network，选择disable cashe， 然后ctrl+r（刷新）</li>
+</ol>
+<hr>
+<h1 id="编写博客"><a href="#编写博客" class="headerlink" title="编写博客"></a>编写博客</h1><ol>
+<li>创建博客文章<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new 文章标题</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>然后在source/_post目录打开相应的md编辑即可。</p>
+<ol>
+<li>创建页面<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page 页面标题</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>然后在source目录下可找到相应的文件夹,打开里面的index.md编写即可。</p>
+<hr>
+<h1 id="替换主题"><a href="#替换主题" class="headerlink" title="替换主题"></a>替换主题</h1><ol>
+<li>在<a href="https://hexi.io/thems/" target="_blank" rel="noopener">主题</a>官网找到自己喜欢的主题，根据提示git到本地themes目录</li>
+<li>修改博客项目,根据路径下的_config.yml配置文件，将theme改为新主题文件夹名称。</li>
+<li>停止hexo服务在重启（ctrl+c）</li>
+<li>执行hexo g 编译，然后去浏览器预览。</li>
+</ol>
+<h1 id="托管到github"><a href="#托管到github" class="headerlink" title="托管到github"></a>托管到github</h1><ol>
+<li>注册github账号（百度）</li>
+<li>验证ssh key<ul>
+<li>在桌面右键 git bash here.</li>
+<li>使用 ssh-keygen -t rsa -C “注册git的邮箱”命令，然后一路回车，直到出现泡沫图案。</li>
+<li>进入C:\User\计算机用户名.ssh 文件夹</li>
+<li>右键打开id_rsa.pub文件，然后ctrl+a全选，然后ctrl+c复制</li>
+<li>进入github官网，右上角点击个人头像，下拉菜单选择settings</li>
+<li>选择左侧ssh and gpg keys</li>
+<li>单击右侧add ssh keys</li>
+<li>title： 随便填写，粘贴前面复制的keys，然后点击 add key。</li>
+</ul>
+</li>
+<li><p>验证github用户名和邮箱</p>
+<ul>
+<li>在桌面右键git bash here，依次执行以下命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config ---global user.name &quot;github用户名&quot;</span><br><span class="line">git config ---global user.email &quot;github邮箱&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>在github创建用户名同名仓库</p>
+<ul>
+<li>点击github 头像左侧+按钮， 选择第一项</li>
+<li>仓库名： github用户名.github.io<br>ps：注意区分大小写，必须保持一致。</li>
+</ul>
+</li>
+<li>配置_config.yml，找到最下面的deploy选项，按照如下格式填写：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: http://github.com/Xujimmy/Xujimmy.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>ps:注意缩进和符号以及属性前面的空格。</p>
+<ol>
+<li>在blog目录执行 hexo d 命令将本地博客代码推送到github服务器。<br>ps： 不需要没更改一次都推送，现在本地测试准确无误后再推送。</li>
+</ol>
+<hr>
+<h1 id="个人域名绑定"><a href="#个人域名绑定" class="headerlink" title="个人域名绑定"></a>个人域名绑定</h1><ol>
+<li>域名申请（百度）</li>
+<li>域名解析，添加如下记录值：<br>记录类型|主机记录|解析线路(isp)|记录值<br>-|-|-|-<br>CNAME|www|默认|用户名.github.io<br>A|@|默认|192.30.352.153<br>A|@|默认|192.30.352.154</li>
+<li>在博客主目录下找到public文件夹，在里面新建名为CNAME的文件，</li>
+<li>在CNAME文件里面填写个人域名，如baidu.com<br>ps: 不带http、www等修饰。</li>
+<li>执行hexo d命令推送</li>
+</ol>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-宋词赏析" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
